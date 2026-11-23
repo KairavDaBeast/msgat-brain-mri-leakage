@@ -1,0 +1,13 @@
+config,acc,correct
+transductive k=4,0.98094688221709,1699
+transductive k=8,0.9797921478060047,1697
+transductive k=16,0.9803695150115473,1698
+inductive k=4,0.9797921478060047,1697
+inductive k=8,0.9815242494226328,1700
+inductive k=16,0.9797921478060047,1697
+class weights off (transductive k=8),0.9797921478060047,1697
+GCN instead of GAT (transductive k=8),0.9797921478060047,1697
+GCN instead of GAT (inductive k=8),0.9792147806004619,1696
+final-layer features only (2048-d),0.9792147806004619,1696
+"CLAHE off (backbone retrained in fp32, 8-epoch budget)",0.9867205542725174,1709
+CLAHE off: ResNet50 head,0.9844110854503464,1705

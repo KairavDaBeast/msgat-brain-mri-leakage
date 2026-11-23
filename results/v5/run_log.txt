@@ -1,0 +1,85 @@
+[    0.0 min] Full run | input: /kaggle/input | output: /kaggle/working/msgat_v5_results
+[    0.5 min] device: Tesla T4
+[    0.7 min] ds1_primary_train: 5600 images {'glioma': 1400, 'notumor': 1400, 'meningioma': 1400, 'pituitary': 1400}
+[    0.7 min] ds1_primary_test: 1600 images {'glioma': 400, 'notumor': 400, 'meningioma': 400, 'pituitary': 400}
+[    0.7 min] ds2_brisc2025: 6000 images {'glioma': 1401, 'notumor': 1207, 'meningioma': 1635, 'pituitary': 1757}
+[    0.7 min] ds3_pmram_raw: 1505 images {'glioma': 373, 'notumor': 396, 'meningioma': 363, 'pituitary': 373}
+[    0.7 min] TOTAL raw: 14705
+[   20.2 min] hashed 14705 images in 1173s; unreadable: 0
+[   20.2 min] unique after exact-hash dedup: 8657 (41.1% removed)
+[   21.1 min] flipped hashes in 53s; hash bits per image: 256
+[   21.1 min] ===== START groups =====
+[   21.1 min] near-copy groups: {'threshold_bits': 4, 'pairs': 10176, 'n_groups': 5764, 'images_in_multi_groups': 4903, 'largest_group': 32, 'mixed_label_groups': 8}
+[   21.1 min] ===== DONE groups (0.0 min) =====
+[   21.1 min] ===== START patients =====
+[   21.1 min] Figshare .mat files not found (0); skipping the patient-level split.
+[   21.1 min] ===== DONE patients (0.0 min) =====
+[   21.1 min] ===== START A_main_random_and_group =====
+[   30.1 min] [random seed 42] resnet 0.9798 | mlp 0.9804 | gat_t 0.9792 | gat_i 0.9815 | knn1 0.9850 | knn7 0.9804 | test near-copy share (<= 4 bits) 0.482
+[   38.9 min] [group seed 42] resnet 0.9667 | mlp 0.9678 | gat_t 0.9740 | gat_i 0.9729 | knn1 0.9808 | knn7 0.9780 | test near-copy share (<= 4 bits) 0.000
+[   38.9 min] ===== DONE A_main_random_and_group (17.7 min) =====
+[   38.9 min] ===== START A_extras =====
+[   38.9 min] ===== DONE A_extras (0.0 min) =====
+[   38.9 min] ===== START B_ablation =====
+[   39.1 min] ablation {'config': 'transductive k=4', 'acc': 0.98094688221709, 'correct': 1699}
+[   39.4 min] ablation {'config': 'transductive k=8', 'acc': 0.9797921478060047, 'correct': 1697}
+[   39.8 min] ablation {'config': 'transductive k=16', 'acc': 0.9803695150115473, 'correct': 1698}
+[   40.0 min] ablation {'config': 'inductive k=4', 'acc': 0.9797921478060047, 'correct': 1697}
+[   40.3 min] ablation {'config': 'inductive k=8', 'acc': 0.9815242494226328, 'correct': 1700}
+[   40.7 min] ablation {'config': 'inductive k=16', 'acc': 0.9797921478060047, 'correct': 1697}
+[   41.0 min] ablation {'config': 'class weights off (transductive k=8)', 'acc': 0.9797921478060047, 'correct': 1697}
+[   41.2 min] ablation {'config': 'GCN instead of GAT (transductive k=8)', 'acc': 0.9797921478060047, 'correct': 1697}
+[   41.5 min] ablation {'config': 'GCN instead of GAT (inductive k=8)', 'acc': 0.9792147806004619, 'correct': 1696}
+[   42.3 min] ablation {'config': 'final-layer features only (2048-d)', 'acc': 0.9792147806004619, 'correct': 1696}
+[   47.3 min] ablation {'config': 'CLAHE off (backbone retrained in fp32, 8-epoch budget)', 'acc': 0.9867205542725174, 'correct': 1709}
+[   47.5 min] ===== DONE B_ablation (8.6 min) =====
+[   47.5 min] ===== START C_seeds =====
+[   52.6 min] [random seed 42] resnet 0.9752 | mlp 0.9746 | gat_t 0.9781 | gat_i 0.9781 | knn1 0.9821 | knn7 0.9781 | test near-copy share (<= 4 bits) 0.482
+[   58.0 min] [group seed 42] resnet 0.9723 | mlp 0.9718 | gat_t 0.9729 | gat_i 0.9735 | knn1 0.9819 | knn7 0.9768 | test near-copy share (<= 4 bits) 0.000
+[   63.0 min] [random seed 7] resnet 0.9734 | mlp 0.9723 | gat_t 0.9746 | gat_i 0.9746 | knn1 0.9833 | knn7 0.9752 | test near-copy share (<= 4 bits) 0.471
+[   68.1 min] [group seed 7] resnet 0.9624 | mlp 0.9660 | gat_t 0.9671 | gat_i 0.9677 | knn1 0.9783 | knn7 0.9718 | test near-copy share (<= 4 bits) 0.000
+[   73.1 min] [random seed 123] resnet 0.9677 | mlp 0.9717 | gat_t 0.9734 | gat_i 0.9711 | knn1 0.9804 | knn7 0.9740 | test near-copy share (<= 4 bits) 0.477
+[   78.2 min] [group seed 123] resnet 0.9613 | mlp 0.9613 | gat_t 0.9642 | gat_i 0.9665 | knn1 0.9711 | knn7 0.9688 | test near-copy share (<= 4 bits) 0.000
+[   83.2 min] [random seed 2024] resnet 0.9671 | mlp 0.9619 | gat_t 0.9723 | gat_i 0.9740 | knn1 0.9833 | knn7 0.9729 | test near-copy share (<= 4 bits) 0.487
+[   88.3 min] [group seed 2024] resnet 0.9592 | mlp 0.9586 | gat_t 0.9683 | gat_i 0.9654 | knn1 0.9739 | knn7 0.9654 | test near-copy share (<= 4 bits) 0.000
+[   93.3 min] [random seed 99] resnet 0.9671 | mlp 0.9688 | gat_t 0.9717 | gat_i 0.9706 | knn1 0.9804 | knn7 0.9717 | test near-copy share (<= 4 bits) 0.487
+[   98.5 min] [group seed 99] resnet 0.9569 | mlp 0.9575 | gat_t 0.9616 | gat_i 0.9645 | knn1 0.9668 | knn7 0.9627 | test near-copy share (<= 4 bits) 0.000
+[   98.5 min] Part C summary:
+ split  model     mean      std  count
+ group  gat_i 0.967518 0.003534      5
+ group  gat_t 0.966811 0.004285      5
+ group   knn1 0.974415 0.005922      5
+ group   knn7 0.969130 0.005511      5
+ group    mlp 0.963030 0.005872      5
+ group resnet 0.962436 0.005920      5
+random  gat_i 0.973672 0.003017      5
+random  gat_t 0.974018 0.002517      5
+random   knn1 0.981871 0.001449      5
+random   knn7 0.974365 0.002436      5
+random    mlp 0.969861 0.004906      5
+random resnet 0.970092 0.003903      5
+[   98.5 min] ===== DONE C_seeds (51.0 min) =====
+[   98.5 min] ===== START D_leave_one_source_out =====
+[  100.7 min] [LOSO ds1 seed 42] (all / no cross-source copy) resnet 0.8205/0.8073 | mlp 0.8433/0.8315 | gat_i 0.8487/0.8377 | knn1 0.8710/0.8598 | knn7 0.8695/0.8596
+[  102.8 min] [LOSO ds1 seed 7] (all / no cross-source copy) resnet 0.8508/0.8400 | mlp 0.8394/0.8294 | gat_i 0.8530/0.8416 | knn1 0.8689/0.8577 | knn7 0.8705/0.8603
+[  105.0 min] [LOSO ds1 seed 123] (all / no cross-source copy) resnet 0.8722/0.8624 | mlp 0.8749/0.8662 | gat_i 0.8733/0.8630 | knn1 0.8838/0.8737 | knn7 0.8829/0.8733
+[  107.2 min] [LOSO ds1 seed 2024] (all / no cross-source copy) resnet 0.8490/0.8374 | mlp 0.8387/0.8268 | gat_i 0.8400/0.8284 | knn1 0.8657/0.8541 | knn7 0.8710/0.8609
+[  109.2 min] [LOSO ds1 seed 99] (all / no cross-source copy) resnet 0.8379/0.8260 | mlp 0.8453/0.8345 | gat_i 0.8549/0.8441 | knn1 0.8521/0.8392 | knn7 0.8605/0.8498
+[  114.3 min] [LOSO ds2 seed 42] (all / no cross-source copy) resnet 0.9295/0.9291 | mlp 0.8624/0.8598 | gat_i 0.8590/0.8556 | knn1 0.8333/0.8282 | knn7 0.8607/0.8573
+[  119.4 min] [LOSO ds2 seed 7] (all / no cross-source copy) resnet 0.8068/0.8017 | mlp 0.8781/0.8752 | gat_i 0.8226/0.8179 | knn1 0.8226/0.8179 | knn7 0.8076/0.8026
+[  124.5 min] [LOSO ds2 seed 123] (all / no cross-source copy) resnet 0.8731/0.8701 | mlp 0.8740/0.8709 | gat_i 0.8342/0.8299 | knn1 0.8085/0.8026 | knn7 0.8259/0.8214
+[  129.6 min] [LOSO ds2 seed 2024] (all / no cross-source copy) resnet 0.8599/0.8564 | mlp 0.8466/0.8427 | gat_i 0.8425/0.8385 | knn1 0.8209/0.8154 | knn7 0.8325/0.8282
+[  134.6 min] [LOSO ds2 seed 99] (all / no cross-source copy) resnet 0.9022/0.9000 | mlp 0.9154/0.9145 | gat_i 0.8632/0.8598 | knn1 0.8093/0.8034 | knn7 0.8408/0.8368
+[  139.3 min] [LOSO ds3 seed 42] (all / no cross-source copy) resnet 0.9113/0.8852 | mlp 0.9087/0.8820 | gat_i 0.9275/0.9066 | knn1 0.9363/0.9164 | knn7 0.9263/0.9049
+[  144.5 min] [LOSO ds3 seed 7] (all / no cross-source copy) resnet 0.8988/0.8689 | mlp 0.8775/0.8393 | gat_i 0.9113/0.8852 | knn1 0.9113/0.8836 | knn7 0.9000/0.8689
+[  149.7 min] [LOSO ds3 seed 123] (all / no cross-source copy) resnet 0.9213/0.8967 | mlp 0.8950/0.8623 | gat_i 0.9163/0.8902 | knn1 0.9187/0.8934 | knn7 0.9125/0.8852
+[  154.9 min] [LOSO ds3 seed 2024] (all / no cross-source copy) resnet 0.9038/0.8738 | mlp 0.9263/0.9049 | gat_i 0.9237/0.9000 | knn1 0.9237/0.9000 | knn7 0.9187/0.8934
+[  160.2 min] [LOSO ds3 seed 99] (all / no cross-source copy) resnet 0.8925/0.8590 | mlp 0.8875/0.8525 | gat_i 0.9050/0.8754 | knn1 0.9113/0.8836 | knn7 0.9062/0.8770
+[  160.2 min] ===== DONE D_leave_one_source_out (61.7 min) =====
+[  160.2 min] ===== START E_size_control =====
+[  162.0 min] [size control seed 42] resnet 0.8684 | mlp 0.9108 | gat_i 0.9153 | knn1 0.9108 | knn7 0.8995
+[  163.9 min] [size control seed 7] resnet 0.8996 | mlp 0.9067 | gat_i 0.8955 | knn1 0.8991 | knn7 0.9026
+[  165.8 min] [size control seed 123] resnet 0.8775 | mlp 0.8897 | gat_i 0.9029 | knn1 0.8873 | knn7 0.8931
+[  167.4 min] [size control seed 2024] resnet 0.8656 | mlp 0.8968 | gat_i 0.8934 | knn1 0.8951 | knn7 0.8985
+[  169.3 min] [size control seed 99] resnet 0.8719 | mlp 0.8824 | gat_i 0.8964 | knn1 0.8976 | knn7 0.8923
+[  169.3 min] ===== DONE E_size_control (9.2 min) =====

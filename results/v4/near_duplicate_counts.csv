@@ -1,0 +1,25 @@
+query set,Hamming <=,n_query,orig only,orig + flips,% of query,% same label
+random split: test vs train+val,0,1732,0,414,23.9,99.8
+random split: test vs train+val,4,1732,202,837,48.33,99.6
+random split: test vs train+val,8,1732,235,854,49.31,99.5
+random split: test vs train+val,16,1732,280,877,50.64,99.5
+random split: test vs train+val,24,1732,364,918,53.0,99.6
+random split: test vs train+val,32,1732,550,991,57.22,99.5
+ds1 vs other sources,0,6651,0,53,0.8,100.0
+ds1 vs other sources,4,6651,250,533,8.01,100.0
+ds1 vs other sources,8,6651,301,647,9.73,100.0
+ds1 vs other sources,16,6651,392,813,12.22,100.0
+ds1 vs other sources,24,6651,517,1010,15.19,100.0
+ds1 vs other sources,32,6651,649,1191,17.91,100.0
+ds2 vs other sources,0,1206,0,13,1.08,100.0
+ds2 vs other sources,4,1206,0,36,2.99,100.0
+ds2 vs other sources,8,1206,0,36,2.99,100.0
+ds2 vs other sources,16,1206,0,36,2.99,100.0
+ds2 vs other sources,24,1206,0,36,2.99,100.0
+ds2 vs other sources,32,1206,3,36,2.99,100.0
+ds3 vs other sources,0,800,0,46,5.75,100.0
+ds3 vs other sources,4,800,189,190,23.75,100.0
+ds3 vs other sources,8,800,196,199,24.88,100.0
+ds3 vs other sources,16,800,208,210,26.25,100.0
+ds3 vs other sources,24,800,219,220,27.5,100.0
+ds3 vs other sources,32,800,232,233,29.12,100.0
