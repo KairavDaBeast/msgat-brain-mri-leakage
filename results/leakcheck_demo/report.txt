@@ -1,0 +1,11 @@
+leakcheck report: 14705 images, threshold 4 of 256 bits, rotations + flips
+
+near-copy groups: 5765 (images that sit in a group of 2+: 12391, largest group: 44)
+pairs with different labels (likely label noise or mixed classes): 47
+
+Overlap between sets (share of each set's images with a near-copy in the other set):
+  nickparvar_train (5600 images, 4503 near-copy pairs inside it): in nickparvar_test: 1458/5600 (26.0%), identical hash 853; in brisc: 3966/5600 (70.8%), identical hash 3900; in pmram: 1472/5600 (26.3%), identical hash 890
+  nickparvar_test (1600 images, 818 near-copy pairs inside it): in nickparvar_train: 1070/1600 (66.9%), identical hash 665; in brisc: 985/1600 (61.6%), identical hash 967; in pmram: 374/1600 (23.4%), identical hash 176
+  brisc (6000 images, 1844 near-copy pairs inside it): in nickparvar_train: 4511/6000 (75.2%), identical hash 4238; in nickparvar_test: 1622/6000 (27.0%), identical hash 1382; in pmram: 882/6000 (14.7%), identical hash 647
+  pmram (1505 images, 265 near-copy pairs inside it): in nickparvar_train: 825/1505 (54.8%), identical hash 649; in nickparvar_test: 267/1505 (17.7%), identical hash 136; in brisc: 561/1505 (37.3%), identical hash 494
+  cross-set copies by best-matching orientation: same 7693, mirror 6019, flip 1154, rot180 1110
