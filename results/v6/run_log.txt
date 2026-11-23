@@ -1,0 +1,42 @@
+[    0.0 min] device cuda | full run
+[    0.0 min] splits_v6.csv: 8705 rows, 0 without an image file
+[    0.0 min] Nickparvar 7200 | PMRAM 1505 (clean 666)
+[    0.1 min] split official_select_on_test {'n_train': 5600, 'n_val': 0, 'n_test': 1600, 'test_with_copy_in_train': 0.669375, 'test_with_copy_or_patient_in_train': 0.879375}
+[    0.1 min] split official {'n_train': 4760, 'n_val': 840, 'n_test': 1600, 'test_with_copy_in_train': 0.669375, 'test_with_copy_or_patient_in_train': 0.879375}
+[    0.1 min] split random_80_10_10 {'n_train': 5760, 'n_val': 720, 'n_test': 720, 'test_with_copy_in_train': 0.6847222222222222, 'test_with_copy_or_patient_in_train': 0.9125}
+[    0.1 min] split random {'n_train': 4896, 'n_val': 864, 'n_test': 1440, 'test_with_copy_in_train': 0.6340277777777777, 'test_with_copy_or_patient_in_train': 0.9069444444444444}
+[    0.1 min] split copy_free {'n_train': 4974, 'n_val': 780, 'n_test': 1446, 'test_with_copy_in_train': 0.0, 'test_with_copy_or_patient_in_train': 0.6770401106500692}
+[    0.1 min] split copy_patient_free {'n_train': 5270, 'n_val': 711, 'n_test': 1219, 'test_with_copy_in_train': 0.0, 'test_with_copy_or_patient_in_train': 0.0}
+[    0.1 min] ===== START part1_dino
+[    8.2 min] DINOv2 features (7200, 1536)
+[    8.7 min] [dino seed 42] random: logreg 0.9660 | knn1 0.9514 | mlp 0.9729 | gat_inductive 0.9271
+[    9.0 min] [dino seed 42] official: logreg 0.9369 | knn1 0.9344 | mlp 0.9387 | gat_inductive 0.8762
+[    9.3 min] [dino seed 42] copy_free: logreg 0.9288 | knn1 0.8976 | mlp 0.9467 | gat_inductive 0.8990
+[    9.6 min] [dino seed 42] copy_patient_free: logreg 0.8983 | knn1 0.8285 | mlp 0.9073 | gat_inductive 0.8409
+[   10.1 min] [dino seed 7] random: logreg 0.9646 | knn1 0.9632 | mlp 0.9708 | gat_inductive 0.9340
+[   10.5 min] [dino seed 7] official: logreg 0.9363 | knn1 0.9344 | mlp 0.9431 | gat_inductive 0.8956
+[   10.8 min] [dino seed 7] copy_free: logreg 0.9296 | knn1 0.9115 | mlp 0.9394 | gat_inductive 0.9052
+[   11.0 min] [dino seed 7] copy_patient_free: logreg 0.9124 | knn1 0.8493 | mlp 0.9044 | gat_inductive 0.8692
+[   11.4 min] [dino seed 123] random: logreg 0.9653 | knn1 0.9583 | mlp 0.9688 | gat_inductive 0.9292
+[   11.8 min] [dino seed 123] official: logreg 0.9369 | knn1 0.9344 | mlp 0.9394 | gat_inductive 0.8912
+[   12.1 min] [dino seed 123] copy_free: logreg 0.9288 | knn1 0.9083 | mlp 0.9360 | gat_inductive 0.9123
+[   12.4 min] [dino seed 123] copy_patient_free: logreg 0.8935 | knn1 0.8209 | mlp 0.8914 | gat_inductive 0.8371
+[   12.8 min] [dino seed 2024] random: logreg 0.9660 | knn1 0.9465 | mlp 0.9708 | gat_inductive 0.9299
+[   13.2 min] [dino seed 2024] official: logreg 0.9363 | knn1 0.9344 | mlp 0.9400 | gat_inductive 0.8800
+[   13.5 min] [dino seed 2024] copy_free: logreg 0.9422 | knn1 0.9040 | mlp 0.9572 | gat_inductive 0.8988
+[   13.8 min] [dino seed 2024] copy_patient_free: logreg 0.9015 | knn1 0.8547 | mlp 0.9171 | gat_inductive 0.8625
+[   14.1 min] [dino seed 99] random: logreg 0.9604 | knn1 0.9604 | mlp 0.9604 | gat_inductive 0.9264
+[   14.5 min] [dino seed 99] official: logreg 0.9369 | knn1 0.9344 | mlp 0.9375 | gat_inductive 0.8869
+[   14.8 min] [dino seed 99] copy_free: logreg 0.9477 | knn1 0.9079 | mlp 0.9567 | gat_inductive 0.8967
+[   15.0 min] [dino seed 99] copy_patient_free: logreg 0.8933 | knn1 0.8158 | mlp 0.8933 | gat_inductive 0.8525
+[   15.0 min] ===== DONE part1_dino
+[   15.0 min] ===== START part2_recipes
+[   28.5 min] [R1_conmedia_resnet50 | official_select_on_test] acc 0.9556 f1 0.9548
+[   35.5 min] [R1_conmedia_resnet50 | official] acc 0.9513 f1 0.9504 | PMRAM all 0.9681 clean 0.9474
+[   45.0 min] [R1_conmedia_resnet50 | copy_free] acc 0.9613 f1 0.9611
+[   59.8 min] [R1_conmedia_resnet50 | copy_patient_free] acc 0.9377 f1 0.9295 | PMRAM all 0.9787 clean 0.9655
+[   78.2 min] [R2_brainfusion_vgg16 | random_80_10_10] acc 0.9486 f1 0.9485
+[   91.7 min] [R2_brainfusion_vgg16 | official] acc 0.9044 f1 0.9028 | PMRAM all 0.8824 clean 0.7823
+[  105.9 min] [R2_brainfusion_vgg16 | copy_free] acc 0.9364 f1 0.9361
+[  114.9 min] [R2_brainfusion_vgg16 | copy_patient_free] acc 0.8893 f1 0.8808 | PMRAM all 0.8983 clean 0.8243
+[  114.9 min] ===== DONE part2_recipes
