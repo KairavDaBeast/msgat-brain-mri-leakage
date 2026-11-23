@@ -1,0 +1,36 @@
+[    0.0 min] Full run | input: /kaggle/input | output: /kaggle/working/msgat_v5b_results
+[    0.4 min] device: Tesla T4
+[    0.5 min] ds1_primary_train: 5600 images {'glioma': 1400, 'notumor': 1400, 'meningioma': 1400, 'pituitary': 1400}
+[    0.5 min] ds1_primary_test: 1600 images {'glioma': 400, 'notumor': 400, 'meningioma': 400, 'pituitary': 400}
+[    0.5 min] ds2_brisc2025: 6000 images {'glioma': 1401, 'notumor': 1207, 'meningioma': 1635, 'pituitary': 1757}
+[    0.5 min] ds3_pmram_raw: 1505 images {'glioma': 373, 'notumor': 396, 'meningioma': 363, 'pituitary': 373}
+[    0.5 min] TOTAL raw: 14705
+[    8.2 min] hashed 14705 images in 467s; unreadable: 0
+[    8.2 min] unique after exact-hash dedup: 8657 (41.1% removed)
+[    9.1 min] flipped hashes in 52s; hash bits per image: 256
+[    9.1 min] ===== START groups =====
+[    9.1 min] near-copy groups: {'threshold_bits': 4, 'pairs': 10176, 'n_groups': 5764, 'images_in_multi_groups': 4903, 'largest_group': 32, 'mixed_label_groups': 8}
+[    9.1 min] ===== DONE groups (0.0 min) =====
+[    9.1 min] ===== START patients =====
+[   12.8 min] loaded 3064 Figshare slices (233 patients)
+[   13.2 min] patient matching: {'available': True, 'n_figshare_slices': 3064, 'n_patients_figshare': 233, 'ncc_threshold': 0.95, 'n_images_matched': 4950, 'n_patients_matched': 233, 'label_agreement_with_figshare': 0.9987878787878788, 'n_distinct_figshare_slices_matched': 3061, 'largest_patient_group': 52, 'n_groups': 2919, 'best_ncc_share_at_least': {'0.8': 0.6399445535404875, '0.9': 0.5774517731315698, '0.95': 0.5717916137229987, '0.98': 0.5704054522351854}}
+[   13.2 min] ===== DONE patients (4.1 min) =====
+[   13.2 min] ===== START A_main_random_and_group =====
+[   19.0 min] [patient seed 42] resnet 0.9421 | mlp 0.9480 | gat_t 0.9439 | gat_i 0.9427 | knn1 0.9516 | knn7 0.9451 | test near-copy share (<= 4 bits) 0.000
+[   19.0 min] ===== DONE A_main_random_and_group (5.8 min) =====
+[   19.0 min] ===== START C_seeds =====
+[   23.9 min] [patient seed 42] resnet 0.9421 | mlp 0.9480 | gat_t 0.9445 | gat_i 0.9433 | knn1 0.9516 | knn7 0.9451 | test near-copy share (<= 4 bits) 0.000
+[   29.8 min] [patient seed 7] resnet 0.9296 | mlp 0.9367 | gat_t 0.9347 | gat_i 0.9354 | knn1 0.9373 | knn7 0.9360 | test near-copy share (<= 4 bits) 0.000
+[   35.6 min] [patient seed 123] resnet 0.9350 | mlp 0.9398 | gat_t 0.9501 | gat_i 0.9458 | knn1 0.9523 | knn7 0.9431 | test near-copy share (<= 4 bits) 0.000
+[   41.5 min] [patient seed 2024] resnet 0.9475 | mlp 0.9469 | gat_t 0.9457 | gat_i 0.9480 | knn1 0.9509 | knn7 0.9463 | test near-copy share (<= 4 bits) 0.000
+[   47.4 min] [patient seed 99] resnet 0.9616 | mlp 0.9629 | gat_t 0.9666 | gat_i 0.9666 | knn1 0.9698 | knn7 0.9704 | test near-copy share (<= 4 bits) 0.000
+[   47.4 min] Part C summary:
+  split  model     mean      std  count
+patient  gat_i 0.947830 0.011551      5
+patient  gat_t 0.948349 0.011672      5
+patient   knn1 0.952369 0.011549      5
+patient   knn7 0.948183 0.013054      5
+patient    mlp 0.946855 0.010137      5
+patient resnet 0.943153 0.012354      5
+[   47.4 min] ===== DONE C_seeds (28.3 min) =====
+[   47.4 min] Saved /kaggle/working/msgat_v5b_results.zip | errors: none
